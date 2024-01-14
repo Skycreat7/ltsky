@@ -7,11 +7,12 @@ export const AuthProvider = ({ children }) => {
 
     const login = (callback) => {
         setIsLoggedIn(true);
-        callback(); // Callback nach erfolgreicher Anmeldung
+        callback();
     };
 
-    const logout = () => {
+    const logout = (callback) => {
         setIsLoggedIn(false);
+        callback();
     };
 
     return <AuthContext.Provider value={{ isLoggedIn, login, logout }}>{children}</AuthContext.Provider>;
